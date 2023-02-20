@@ -1,7 +1,4 @@
-FROM nginx
-
-# Copy custom nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose port 80 for incoming traffic
+FROM nginx:latest
+COPY . /etc/nginx/
 EXPOSE 80
+CMD [ "nginx", "-g", "daemon off;" ]
